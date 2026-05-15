@@ -136,7 +136,7 @@ export default function Process() {
       style={{
         minHeight: "150vh",
         paddingTop: "clamp(80px, 10vh, 120px)",
-        paddingBottom: "clamp(40px, 5vh, 60px)",
+        paddingBottom: "clamp(20px, 3vh, 10px)",
       }}
     >
       <FloatingPixels />
