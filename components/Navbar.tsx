@@ -21,9 +21,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const sections = links
-      .filter(link => link.href.startsWith("/#"))
-      .map(link => document.querySelector(link.href.substring(1)));
-    
+      .filter((link) => link.href.startsWith("/#"))
+      .map((link) => document.querySelector(link.href.substring(1)));
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -32,7 +32,7 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "-50% 0px -50% 0px", threshold: 0 },
     );
 
     sections.forEach((section) => {
@@ -73,13 +73,17 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className={`relative text-base font-medium group transition-colors duration-200 ${
-                  activeSection === link.href ? "text-[#d65a4a]" : "text-[#050505]"
+                  activeSection === link.href
+                    ? "text-[#d65a4a]"
+                    : "text-[#050505]"
                 }`}
               >
                 {link.name}
-                <span 
+                <span
                   className={`absolute -bottom-0.5 left-0 h-px bg-[#d65a4a] transition-all duration-300 ${
-                    activeSection === link.href ? "w-full" : "w-0 group-hover:w-full"
+                    activeSection === link.href
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
                   }`}
                 />
               </a>

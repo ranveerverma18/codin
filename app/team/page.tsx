@@ -9,7 +9,7 @@ export default function TeamPage() {
     <SmoothScroll>
       <Cursor />
       <Navbar />
-      <main className="min-h-screen" style={{ paddingTop: '160px' }}>
+      <main className="min-h-screen" style={{ paddingTop: "160px" }}>
         <TeamMembers />
       </main>
       <Footer />
