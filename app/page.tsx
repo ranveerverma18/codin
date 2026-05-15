@@ -18,6 +18,7 @@ export default function Home() {
         <About />
         <Process />
         <Services />
+        <div className="h-12 md:h-20" />
         <Contact />
       </main>
       <Footer />
