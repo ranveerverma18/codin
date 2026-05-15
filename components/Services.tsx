@@ -91,42 +91,36 @@ export default function Services() {
               <div className="flip-card-inner">
                 {/* Front */}
                 <div
-                  className="flip-card-front border border-[#050505] p-7 flex flex-col justify-between"
+                  className="flip-card-front border border-[#050505] p-7 flex flex-col items-center justify-center text-center"
                   style={{ background: s.bg, boxShadow: "5px 5px 0px #050505" }}
                 >
-                  <div>
-                    <div className="text-3xl mb-5">{s.icon}</div>
+                  <div className="flex flex-col items-center">
+                    <div className="text-3xl mb-4">{s.icon}</div>
                     <h3 className="text-xl font-black text-[#050505] leading-tight">
                       {s.title}
                     </h3>
-                  </div>
-                  <div className="flex items-end justify-between">
-                    <span
-                      className="font-pixel leading-none select-none text-[#050505]"
-                      style={{ fontSize: "4.5rem", opacity: 0.07 }}
-                    >
-                      {s.num}
-                    </span>
-                    <span className="text-xs text-[#a8a3a0] mb-1">Hover →</span>
                   </div>
                 </div>
 
                 {/* Back */}
                 <div
-                  className="flip-card-back bg-[#050505] border border-[#050505] p-7 flex flex-col justify-between"
+                  className="flip-card-back bg-[#050505] border border-[#050505] p-6 flex flex-col justify-between items-center text-center"
                   style={{ boxShadow: "5px 5px 0px #d65a4a" }}
                 >
-                  <div>
-                    <h3 className="text-base font-black text-[#f4ede8] mb-5 tracking-tight">
+                  <div className="w-full">
+                    <h3
+                      className="font-black text-[#f4ede8] tracking-tight"
+                      style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)" }}
+                    >
                       {s.title}
                     </h3>
-                    <ul className="space-y-2.5">
+                    <ul className="mt-5 space-y-3">
                       {s.items.map((item) => (
                         <li
                           key={item}
-                          className="text-xs text-[#a8a3a0] flex items-center gap-2.5 leading-relaxed"
+                          className="text-sm md:text-base text-[#a8a3a0] flex items-center justify-center gap-2.5 leading-relaxed"
                         >
-                          <span className="w-1.5 h-1.5 bg-[#1f8b8f] flex-shrink-0" />
+                          <span className="w-2 h-2 bg-[#1f8b8f] flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -134,7 +128,7 @@ export default function Services() {
                   </div>
                   <a
                     href="#contact"
-                    className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-[#f4ede8] border border-[#f4ede8]/25 px-4 py-2.5 hover:bg-[#1f8b8f] hover:border-[#1f8b8f] transition-all duration-200"
+                    className="mt-5 inline-flex items-center justify-center gap-2 text-xs font-semibold text-[#f4ede8] border border-[#f4ede8]/25 px-4 py-2.5 hover:bg-[#1f8b8f] hover:border-[#1f8b8f] transition-all duration-200"
                   >
                     Get Started <span>→</span>
                   </a>

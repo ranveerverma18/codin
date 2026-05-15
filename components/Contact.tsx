@@ -25,7 +25,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label className="block text-[10px] tracking-[0.22em] uppercase mb-3 text-[#a8a3a0]">
                 Company Name
@@ -55,13 +55,13 @@ export default function Contact() {
               <textarea
                 rows={5}
                 placeholder="We are building a..."
-                className="w-full bg-transparent border-0 border-b border-[#050505]/15 pb-3 text-base focus:outline-none focus:border-[#050505] resize-none leading-relaxed"
+                className="w-full bg-transparent border-0 pb-3 text-base focus:outline-none resize-none leading-relaxed"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-2 inline-flex items-center justify-between gap-4 px-6 py-3 text-sm font-semibold tracking-[0.18em] uppercase border border-[#050505] text-[#050505] hover:bg-[#050505] hover:text-[#f4ede8] transition-colors"
+              className="mt-1 inline-flex items-center justify-center gap-3 px-8 py-3 text-sm font-semibold tracking-[0.18em] uppercase border border-[#050505] text-[#050505] hover:bg-[#050505] hover:text-[#f4ede8] transition-colors rounded-full"
             >
               Send Message <span>→</span>
             </button>

@@ -20,6 +20,7 @@ export default function Home() {
         <Services />
         <div className="h-12 md:h-20" />
         <Contact />
+        <div className="h-12 md:h-20" />
       </main>
       <Footer />
     </SmoothScroll>
