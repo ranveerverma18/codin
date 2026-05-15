@@ -35,7 +35,7 @@ const services = [
 export default function Services() {
   return (
     <section className="py-[120px] md:py-[160px] bg-[#f4ede8]">
-      <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-16 lg:px-24">
+      <div className="about-container">
 
         {/* Header */}
         <div className="mb-16 md:mb-20">

@@ -51,7 +51,6 @@ export default function Process() {
         ([entry]) => {
           if (entry.isIntersecting) setActive(i);
         },
-        // rootMargin pushes the trigger point to the upper-middle of the viewport
         { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
       );
       obs.observe(el);
@@ -62,22 +61,19 @@ export default function Process() {
 
   return (
     <section id="process" className="py-[120px] md:py-[160px] bg-[#f4ede8]">
-      <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-16 lg:px-24">
-
+      <div className="about-container">
         {/* Section label */}
-        <div className="mb-16 md:mb-20">
+        <div className="mb-14 md:mb-18">
           <span className="font-pixel text-[11px] text-[#a8a3a0] tracking-[0.2em] uppercase">
             — Our Process
           </span>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-28">
-
-          {/* ── LEFT: sticky nav ── */}
-          <div className="lg:w-[34%] xl:w-[30%] lg:sticky lg:top-28 lg:self-start lg:pb-16">
-
+        <div className="flex flex-col lg:flex-row lg:gap-16 xl:gap-24">
+          {/* LEFT: sticky nav */}
+          <div className="lg:w-[30%] lg:sticky lg:top-28 lg:self-start lg:pb-16">
             <h2
-              className="font-pixel leading-[1.2] text-[#050505] mb-12"
+              className="font-pixel leading-[1.2] text-[#050505] mb-10"
               style={{ fontSize: "clamp(1.5rem, 2.6vw, 2.2rem)" }}
             >
               From idea to<br />
@@ -85,11 +81,9 @@ export default function Process() {
               product
             </h2>
 
-            {/* Step indicators */}
             <div className="flex flex-col">
               {steps.map((s, i) => (
                 <div key={s.num} className="flex items-stretch gap-4">
-                  {/* Number + connector line */}
                   <div className="flex flex-col items-center">
                     <div
                       className={`w-8 h-8 border-2 flex items-center justify-center font-pixel text-[10px] flex-shrink-0 transition-all duration-500 ${
@@ -113,7 +107,6 @@ export default function Process() {
                     )}
                   </div>
 
-                  {/* Label */}
                   <div className={`pb-8 flex items-start pt-1 ${i === steps.length - 1 ? "pb-0" : ""}`}>
                     <span
                       className={`text-sm font-medium leading-none transition-all duration-400 ${
@@ -128,45 +121,38 @@ export default function Process() {
             </div>
           </div>
 
-          {/* ── RIGHT: scrollable content ── */}
-          <div className="lg:w-[66%] xl:w-[70%] flex flex-col mt-12 lg:mt-0">
+          {/* RIGHT: content */}
+          <div className="lg:w-[70%] flex flex-col mt-10 lg:mt-0">
             {steps.map((step, i) => (
               <div
                 key={step.num}
                 ref={(el) => { sectionRefs.current[i] = el; }}
-                className={`py-14 md:py-16 ${i !== 0 ? "border-t border-[#050505]/10" : ""}`}
+                className={`py-12 md:py-16 ${i !== 0 ? "border-t border-[#050505]/15" : ""}`}
               >
                 <motion.div
-                  animate={{
-                    opacity: i === active ? 1 : 0.3,
-                    y: i === active ? 0 : 6,
-                  }}
+                  animate={{ opacity: i === active ? 1 : 0.35, y: i === active ? 0 : 6 }}
                   transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  {/* Step number + title */}
-                  <div className="flex items-baseline gap-4 mb-5">
+                  <div className="flex items-baseline gap-5 mb-4">
                     <span className="font-pixel text-[10px] text-[#a8a3a0] tracking-widest flex-shrink-0">
                       {step.num}
                     </span>
                     <h3
-                      className={`font-black leading-[0.95] tracking-tight transition-colors duration-500 ${
-                        i === active ? "text-[#d65a4a]" : "text-[#050505]"
+                      className={`font-black leading-[0.95] tracking-tight ${
+                        i === active ? "text-[#d65a4a]" : "text-[#0f2f2f]"
                       }`}
-                      style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)" }}
+                      style={{ fontSize: "clamp(2.4rem, 4.2vw, 3.6rem)" }}
                     >
                       {step.title}
                     </h3>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-[#a8a3a0] leading-[1.75] text-base md:text-lg max-w-[52ch]">
+                  <p className="text-[#3a3a3a]/80 leading-[1.7] text-base md:text-lg max-w-[72ch]">
                     {highlight(step.desc, step.keywords)}
                   </p>
                 </motion.div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
