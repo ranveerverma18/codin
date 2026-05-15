@@ -15,18 +15,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        {/* subtle full-width rule between light sections */}
-        <div className="section-divider" />
         <About />
-        <div className="section-divider" />
-        <div className="h-12 md:h-20" />
         <Process />
-        <div className="section-divider" />
-        <div className="h-12 md:h-20" />
         <Services />
-        {/* explicit gap before the dark Contact section */}
-        <div className="h-12 md:h-20" />
-        <div className="h-[1px] bg-[#050505]/8" />
         <Contact />
       </main>
       <Footer />

@@ -25,10 +25,12 @@ export default function Navbar() {
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-16 lg:px-24 py-4 flex items-center justify-between">
-
         {/* Logo */}
-        <a href="#" className="font-pixel text-xl tracking-tight text-[#050505] select-none">
-          FORMA<span className="text-[#d65a4a]">.</span>
+        <a
+          href="#"
+          className="font-pixel text-xl tracking-tight text-[#050505] select-none"
+        >
+          codin<span className="text-[#d65a4a]">.</span>
         </a>
 
         {/* Nav links */}
@@ -59,7 +61,6 @@ export default function Navbar() {
             Let&apos;s Talk
           </a>
         </div>
-
       </div>
     </motion.nav>
   );
